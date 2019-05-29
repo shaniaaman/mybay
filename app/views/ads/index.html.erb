@@ -1,0 +1,38 @@
+<body style="background-color:powderblue;">
+<h1>MyBay</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name &nbsp&nbsp</th>
+      <th>Description &nbsp&nbsp</th>
+      <th>Price &nbsp&nbsp</th>
+      <th>Seller ID &nbsp&nbsp</th>
+      <th>Email &nbsp&nbsp&nbsp&nbsp</th>
+      <th>Image URL &nbsp&nbsp</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ads.each do |ad| %>
+      <tr>
+        <td><%= ad.name %></td>
+        <td><%= ad.description %></td>
+        <td><%= ad.price %></td>
+        <td><%= ad.seller_id %></td>
+        <td><%= ad.email %></td>
+		<td><%= ad.img_url %></td>
+		<td><a href="ads/<%= ad.id%>">SHOW &nbsp</a></td>
+		<td><a href="ads/edit/<%= ad.id%>">EDIT &nbsp</a></td>
+		<td><a href="ads/delete/<%= ad.id%>">DELETE &nbsp</a></td>
+      </tr>
+    <% end %>
+  </tbody>
+  
+  <a href="ads/new">CREATE NEW AD &nbsp</a>
+</table>
+</body>
+
+
+
